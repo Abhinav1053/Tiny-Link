@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TinyLink Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4fa3ff;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .form-box {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 6px;
+      background: #222;
+      color: #fff;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 18px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    #search {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      background: #222;
+      color: white;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #333;
+      text-align: left;
+    }
+
+    th {
+      color: #4fa3ff;
+    }
+
+    a {
+      color: #4fa3ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .copy-btn {
+      background: #444;
+      padding: 6px 12px;
+      border-radius: 6px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .copy-btn:hover {
+      background: #555;
+    }
+
+    .stat-btn {
+      background: #2563eb;
+      padding: 6px 12px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    .stat-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .delete-btn {
+      background: red;
+      padding: 6px 12px;
+      border-radius: 6px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .delete-btn:hover {
+      background: #cc0000;
+    }
+
+    #emptyState {
+      text-align: center;
+      padding: 20px;
+      display: none;
+      color: #888;
+    }
+
+    #createMsg {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>TinyLink Dashboard</h1>
+
+    <div class="form-box">
+      <form id="createForm">
+        <label>Long URL *</label>
+        <input id="longUrl" type="url" placeholder="https://example.com" required>
+
+        <label>Custom Code (optional)</label>
+        <input id="customCode" type="text" placeholder="mylink">
+
+        <button type="submit">Create Short Link</button>
+        <div id="createMsg"></div>
+      </form>
+    </div>
+
+    <input type="text" id="search" placeholder="Search links...">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Long URL</th>
+          <th>Clicks</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="linksBody"></tbody>
+    </table>
+
+    <div id="emptyState">No links found.</div>
+  </div>
+
+  <!-- MUST BE LOADED for dashboard to work -->
+  <script src="/app.js"></script>
+</body>
+</html>

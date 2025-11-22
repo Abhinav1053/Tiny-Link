@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TinyLink – Stats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .card {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      border: 1px solid #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .item {
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+    .label { color: #888; }
+    a {
+      color: #4da3ff;
+      text-decoration: none;
+    }
+    .back {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #ff4444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>TinyLink Stats</h1>
+
+    <!-- SERVER FILLS THESE VALUES -->
+    <div class="item">
+      <span class="label">Short Code:</span> {{code}}
+    </div>
+
+    <div class="item">
+      <span class="label">Short URL:</span>
+      <a href="{{shortUrl}}" target="_blank">{{shortUrl}}</a>
+    </div>
+
+    <div class="item">
+      <span class="label">Destination URL:</span><br>
+      <a href="{{longUrl}}" target="_blank">{{longUrl}}</a>
+    </div>
+
+    <div class="item">
+      <span class="label">Clicks:</span> {{clicks}}
+    </div>
+
+    <div class="item">
+      <span class="label">Created At:</span> {{createdAt}}
+    </div>
+
+    <a class="back" href="/">← Back to Dashboard</a>
+  </div>
+
+</body>
+</html>

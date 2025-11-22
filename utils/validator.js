@@ -1,0 +1,1 @@
+exports.isValidCode=c=>/^[A-Za-z0-9]{6,8}$/.test(c);exports.isValidUrl=u=>{try{new URL(u);return true}catch(e){return false}};
